@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .head {
+            text-align: center;
+            background-color: black;
+            color: aliceblue;
+            padding-top: 2px;
+        }
+        .b2 {
+            background: url('https://www.opporture.org/wp-content/uploads/2024/01/fraud-detection-header.jpg');
+        }
+        .b1 {
+            text-align: center;
+            color: aliceblue;
+            padding-top: 5%;
+            padding-bottom: 10%;
+            font-size: 20px;
+        }
+        .sub {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="head">
+    <h1>PREDICTION</h1>
+</div>
+<div class="b2">
+    <div class="b1">
+        <form action="/predict" method="POST">
+            <div>
+                <label>Step:</label>
+                <input type="text" name="step" required>
+            </div>
+            <br>
+            <div>
+                <label>Type:</label>
+                <input type="text" name="type" required>
+            </div>
+            <br>
+            <div>
+                <label>Amount:</label>
+                <input type="text" name="amount" required>
+            </div>
+            <br>
+            <div>
+                <label>Old Balance Org:</label>
+                <input type="text" name="oldbalanceOrg" required>
+            </div>
+            <br>
+            <div>
+                <label>New Balance Orig:</label>
+                <input type="text" name="newbalanceOrig" required>
+            </div>
+            <br>
+            <div>
+                <label>Old Balance Dest:</label>
+                <input type="text" name="oldbalanceDest" required>
+            </div>
+            <br>
+            <div>
+                <label>New Balance Dest:</label>
+                <input type="text" name="newbalanceDest" required>
+            </div>
+            <br>
+            <div class="sub">
+                <input type="submit" value="PREDICT">
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

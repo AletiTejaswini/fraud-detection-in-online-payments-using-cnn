@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .first {
+            text-align: left;
+            font-size: 15px;
+            background-color: rgb(168, 219, 217);
+            color: black;
+        }
+        .sec {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+        .img1 {
+            height: 450px;
+            margin-right: 20px;
+        }
+        .sec .para {
+            max-width: 600px;
+            font-size: 20px;
+        }
+        .head {
+            text-align: center;
+        }
+        .img {
+            padding-left: 300px;
+        }
+        .img2, .img4 {
+            height: 200px;
+            width: 700px;
+        }
+        .para1, .para2, .para3 {
+            font-size: 20px;
+            padding: 20px;
+        }
+        .algo-container, .algo-container1, .algo-container2 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <h1>ABOUT</h1>
+    </div>
+    <h1 class="head">ABOUT FRAUD DETECTION IN ONLINE PAYMENTS</h1>
+    <div class="sec">
+        <img class="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwRKLsjSIhNZgsdd1mYVJUgM_xDbFbA-bFgw&s">
+        <p class="para">
+            People rely on online transactions for nearly everything in today’s environment. Online transactions offer several benefits, such as ease of use, viability, speedier payments, etc., but they also have some drawbacks, such as fraud, phishing, data loss, etc. As online transactions grow, there is a continuing risk of frauds and deceptive transactions that could violate a person’s privacy. In order to prevent high risk transactions, numerous commercial banks and insurance firms invested millions of rupees in the development of transaction detection systems. A feature-engineered machine learning-based model for detecting transaction fraud. By processing as much data as it can, the algorithm can gain experience, strengthen its stability, and increase its performance.
+        </p>
+    </div>
+    <div class="img"> 
+        <img src="https://miro.medium.com/v2/resize:fit:1224/1*he_urQb-p3Jva6FpNW7IjQ.gif">
+    </div>
+    <div>
+        <h1>ALGORITHMS USED:</h1>
+        <h2>CONVOLUTIONAL NEURAL NETWORK:</h2>
+        <div class="algo-container">
+            <img class="img2" src="https://cdn.analyticsvidhya.com/wp-content/uploads/2020/02/Comp-1.gif">
+            <p class="para1">
+                CNNs are distinguished from classic machine learning algorithms such as SVMs and decision trees by their ability to autonomously extract features at a large scale, by passing the need for manual feature engineering and thereby enhancing efficiency. The convolutional layers grant CNNs their translation-invariant characteristics, empowering them to identify and extract patterns and features from data irrespective of variations in position, orientation, scale, or translation.
+            </p>
+        </div>
+        <h2>K-NEAREST NEIGHBOR(KNN) Algorithm</h2>
+        <div class="algo-container1">
+            <img class="img3" src="https://miro.medium.com/v2/resize:fit:960/1*70N-3n93NIfu5vKSUAwiqg.gif">
+            <p class="para2">
+                (K-NN) algorithm is a versatile and widely used machine learning algorithm that is primarily used for its simplicity and ease of implementation. It does not require any assumptions about the underlying data distribution. It can also handle both numerical and categorical data, making it a flexible choice for various types of datasets in classification and regression tasks. It is a non-parametric method that makes predictions based on the similarity of data points in a given dataset. K-NN is less sensitive to outliers compared to other algorithms.
+                The K-NN algorithm works by finding the K nearest neighbors to a given data point based on a distance metric, such as Euclidean distance. The class or value of the data point is then determined by the majority vote or average of the K neighbors. This approach allows the algorithm to adapt to different patterns and make predictions based on the local structure of the data.
+            </p>
+        </div>
+        <h2>DECISION TREE ALGORITHM:</h2>
+        <div class="algo-container2">
+            <img class="img4" src="https://cdn.devdojo.com/images/july2021/childnode.gif">
+            <p class="para3">
+                A decision tree is a type of supervised learning algorithm that is commonly used in machine learning to model and predict outcomes based on input data. It is a tree-like structure where each internal node tests on attribute, each branch corresponds to attribute value and each leaf node represents the final decision or prediction. The decision tree algorithm falls under the category of supervised learning. They can be used to solve both regression and classification problems.
+                The process of forming a decision tree involves recursively partitioning the data based on the values of different attributes. The algorithm selects the best attribute to split the data at each internal node, based on certain criteria such as information gain or Gini impurity. This splitting process continues until a stopping criterion is met, such as reaching a maximum depth or having a minimum number of instances in a leaf node.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

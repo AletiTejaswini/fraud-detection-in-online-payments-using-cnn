@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis and Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .first {
+            background-color: brown;
+            color: aliceblue;
+            text-align: center;
+            padding: 20px;
+            margin: 0; /* Reset margin for the header */
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse; /* Ensure borders are collapsed */
+            margin-top: 20px;
+            margin-bottom: 40px; /* Add some space below the table */
+        }
+        th, td {
+            border: 2px solid #0e0101; /* Add borders to table cells */
+            text-align: left; /* Align text to the left */
+            padding: 8px; /* Add padding inside cells */
+        }
+        th {
+            background-color: #f2f2f2; /* Light gray background for headers */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .chart-container {
+            width: 300px; /* Set width for pie charts */
+            margin: 20px; /* Margin around each chart */
+        }
+        .bar-chart-container {
+            width: 600px; /* Increased width for the bar chart */
+            margin: 20px; /* Margin around the bar chart */
+        }
+        canvas {
+            max-width: 100%; /* Ensure the canvas fits within the container */
+        }
+        .img{
+            justify-content: center;
+            padding-left: 100px;
+        }
+        .i1{
+            padding-left: 320px;
+            height:400px;
+        }
+        .i2{
+            padding-left: 320px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="first">ANALYSIS AND REPORT</h1>
+    <h2>Analysis of the Dataset</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name of the Dataset</th>
+                <th>online_fraud.csv</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Data Shape</td>
+                <td>(6362620, 11)</td>
+            </tr>
+            <tr>
+                <td>Unique Target Values</td>
+                <td>[0, 1]</td>
+            </tr>
+            <tr>
+                <td>Non-Fraudulent Transactions (Before Preprocessing)</td>
+                <td>(0, 6354407)</td>
+            </tr>
+            <tr>
+                <td>Fraudulent Transactions (Before Preprocessing)</td>
+                <td>(1, 8213)</td>
+            </tr>
+            <tr>
+                <td>Non-Fraudulent Transactions (After Preprocessing)</td>
+                <td>(0, 8213)</td>
+            </tr>
+            <tr>
+                <td>Fraudulent Transactions (After Preprocessing)</td>
+                <td>(1, 8213)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="container">
+        <div class="chart-container">
+            <h2>Before Preprocessing</h2>
+            <canvas id="beforePreprocessingChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>After Preprocessing</h2>
+            <canvas id="afterPreprocessingChart"></canvas>
+        </div>
+    </div>
+    <div>
+    <h2> SAMPLE FEATURES OF THE DATASET</h2>
+    <img class="img" src="https://media.geeksforgeeks.org/wp-content/uploads/20220930110711/2.PNG">
+    </div>
+    <h2>Model and Accuracy</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>MODEL NAME</th>
+                <th>ACCURACY</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CONVOLUTIONAL NEURAL NETWORK (CNN)</td>
+                <td>96%</td>
+            </tr>
+            <tr>
+                <td>K-NEAREST NEIGHBOR (KNN)</td>
+                <td>95%</td>
+            </tr>
+            <tr>
+                <td>DECISION TREE</td>
+                <td>91%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="bar-chart-container">
+        <h2>Model Accuracy Bar Plot</h2>
+        <canvas id="accuracyChart"></canvas>
+    </div>
+
+    <script>
+        // Data for before preprocessing
+        const beforeData = {
+            labels: ['Non-fraudulent (0)', 'Fraudulent (1)'],
+            datasets: [{
+                data: [6354407, 8213],
+                backgroundColor: ['#36A2EB', '#FF6384'],
+                hoverOffset: 4
+            }]
+        };
+
+        // Data for after preprocessing (assuming equal fraudulent and non-fraudulent)
+        const afterData = {
+            labels: ['Non-fraudulent (0)', 'Fraudulent (1)'],
+            datasets: [{
+                data: [8213, 8213],
+                backgroundColor: ['#36A2EB', '#FF6384'],
+                hoverOffset: 4
+            }]
+        };
+
+        // Configurations for the charts
+        const configBefore = {
+            type: 'pie',
+            data: beforeData,
+        };
+
+        const configAfter = {
+            type: 'pie',
+            data: afterData,
+        };
+
+        // Render the pie charts
+        const beforePreprocessingChart = new Chart(
+            document.getElementById('beforePreprocessingChart'),
+            configBefore
+        );
+
+        const afterPreprocessingChart = new Chart(
+            document.getElementById('afterPreprocessingChart'),
+            configAfter
+        );
+
+        // Data for model accuracy
+        const accuracyData = {
+            labels: ['CNN', 'KNN', 'Decision Tree'],
+            datasets: [{
+                label: 'Accuracy (%)',
+                data: [96, 95, 91],
+                backgroundColor: ['lightblue', 'lightblue', 'lightblue'],
+                borderColor: ['#36A2EB', '#36A2EB', '#36A2EB'],
+                borderWidth: 1
+            }]
+        };
+
+        // Configurations for the accuracy chart
+        const accuracyConfig = {
+            type: 'bar',
+            data: accuracyData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Accuracy (%)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Model'
+                        }
+                    }
+                }
+            }
+        };
+
+        // Render the accuracy chart
+        const accuracyChart = new Chart(
+            document.getElementById('accuracyChart'),
+            accuracyConfig
+        );
+    </script>
+   
+    
+</body>
+</html>

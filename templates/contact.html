@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: brown;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color:brown;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color:brown;
+        }
+        .contact-details {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e7f3fe;
+            border-left: 6px solid #2196F3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Contact Us</h1>
+    </div>
+
+    <div class="container">
+        <h2>We'd love to hear from you!</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-details">
+            <h3>Contact Details</h3>
+            <p>Email: tejaswinialeti@gmail.com</p>
+            <p>Phone: +1234567890</p>
+            <p>Address: Anurag university,Hyderabad.</p>
+        </div>
+    </div>
+
+</body>
+</html>
